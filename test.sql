@@ -42,5 +42,23 @@ order by HireDate desc, EmployeeId desc
 limit 3;
 
 
+/** Query showing our 10 biggest invoices by Total value, in descending order ***/
+select
+    concat(Customer.FirstName, " ", Customer.LastName) as Name,
+    Invoice.InvoiceDate as Date,
+    Invoice.Total
+from Invoice
+inner join Customer ON Invoice.CustomerId = Customer.CustomerId
+order by Total desc, InvoiceDate desc
+limit 10;
+
+
+/** The Min Function **/
+Select Min(BirthDate) From Employee;
+
+/** The Max Function **/
+Select Max(HireDate) From Employee;
+
+
 
 
